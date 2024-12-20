@@ -4345,3 +4345,22 @@ a {
   font-style: normal;
   font-display: swap;
 }
+
+.logo {
+  position: relative;
+  font-family: var(--heading);
+  font-size: 3em;
+  font-weight: bold;
+  color: black;
+}
+
+.text {
+  display: inline-block;
+}
+
+.logo img {
+  position: absolute;
+  height: 1em;
+  top: 0;
+  transform: translate(50%, 10%);
+}
