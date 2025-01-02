@@ -2328,7 +2328,7 @@ a {
   font-family: var(--heading);
   white-space: normal;
   min-width: 4.6em;
-  font-size: 16.8em;
+  font-size: 10.8em;
   line-height: .8
 }
 
@@ -2411,7 +2411,7 @@ a {
   font-family: var(--heading);
   text-align: center;
   text-transform: uppercase;
-  font-size: 6em;
+  font-size: 4em;
   font-weight: 600;
   line-height: 1
 }
@@ -4363,4 +4363,49 @@ a {
   height: 1em;
   top: 0;
   transform: translate(50%, 10%);
+}
+
+#roadmap{
+  margin: 0px 0px 150px 0px;
+}
+.roadmap-title {
+  text-align: center;
+}
+.roadmap-container {
+  display: flex;
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.roadmap-box {
+  width: 100vw; /* 100% of viewport width */
+  min-width: 300px; /* Minimum width for each box */
+  padding: 20px;
+  box-sizing: border-box;
+  background: #f4f4f4;
+  border: 1px solid #ddd;
+  margin: 0px 20px;
+  transform: translateX(100%); /* Initially slide off-screen */
+  opacity: 0;
+  transition: transform 1s ease, opacity 1s ease;
+}
+
+.roadmap-box.show {
+  transform: translateX(0); /* Bring the box into view */
+  opacity: 1;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+ul li {
+  margin: 10px 0;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
 }
