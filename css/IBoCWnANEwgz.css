@@ -2179,7 +2179,7 @@ textarea.w-select {
   --heading: Clashgrotesk, sans-serif;
   --txt--light: var(--brand--light);
   --brand--accent: #fff;
-  --brand--accent-dark: #000;
+  --brand--accent-dark: #e2a200;
   --brand--dark: #000;
   --bg--general: var(--brand--light);
   --button--bg: var(--brand--accent-dark);
@@ -2282,7 +2282,7 @@ a {
 
 .section.section__footer {
   color: var(--txt--light);
-  padding-top: 0;
+  padding-top: 40px;
   padding-bottom: 3em
 }
 
@@ -2668,7 +2668,7 @@ a {
 .button.button__nav {
   grid-column-gap: .6em;
   grid-row-gap: .6em;
-  border: 1px solid var(--brand--dark);
+  border: 1px solid #e2a200;
   background-color: var(--brand--light);
   color: var(--txt--dark);
   border-radius: .8em;
@@ -2681,7 +2681,7 @@ a {
 }
 
 .button.button__nav:hover {
-  background-color: var(--brand--dark);
+  background-color: #e2a200;
   color: var(--txt--light)
 }
 
@@ -2703,6 +2703,10 @@ a {
   font-size: 1.25em;
   line-height: 1.2;
   display: flex
+}
+
+.button.button__footer:hover {
+  background-color: #e2a200;
 }
 
 .copyright-txt {
@@ -2739,7 +2743,7 @@ a {
 .upload-wrapper {
   text-align: center;
   flex-flow: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   margin-top: 1em;
   display: flex;
@@ -3240,9 +3244,6 @@ a {
   inset: 0%
 }
 
-.chart-legend {
-  display: none
-}
 
 .test-char {
   aspect-ratio: 1;
@@ -3426,7 +3427,7 @@ a {
 
 .bg-elips {
   z-index: -1;
-  color: #b0b0fc;
+  color: #DBB960;
   background-color: currentColor;
   position: absolute;
   inset: 5.25vw 0%
@@ -3683,6 +3684,7 @@ a {
   }
 
   .h2-footer {
+    margin-top: 5em;
     font-size: 4em
   }
 
@@ -3824,7 +3826,7 @@ a {
   }
 
   .section.section__footer {
-    margin-top: 4em
+    margin-top: 5em;
   }
 
   .section.section__elipse {
@@ -4054,83 +4056,6 @@ a {
     text-align: center
   }
 
-  .chart-legend {
-    width: 80%;
-    margin-top: 2em;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 1em;
-    display: block
-  }
-
-  .chart-legend-item {
-    grid-column-gap: .5em;
-    grid-row-gap: .5em;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: .5em;
-    padding-bottom: .5em;
-    display: flex
-  }
-
-  .chart-legend-item_color {
-    aspect-ratio: 1;
-    background-image: radial-gradient(circle at 0 100%, #201a52, #e6b6e8);
-    border-radius: 2em;
-    width: 3em
-  }
-
-  .chart-legend-item_color.color_team {
-    background-image: radial-gradient(circle at 0 100%, #2b0040, #982e53)
-  }
-
-  .chart-legend-item_color.color_pvs {
-    background-image: radial-gradient(circle at 0 100%, #6f0700, #ff890b)
-  }
-
-  .chart-legend-item_color.color_marketing {
-    background-image: radial-gradient(circle at 0 100%, #24025c, #6880ff)
-  }
-
-  .chart-legend-item_color.color_listing {
-    background-image: radial-gradient(circle at 0 100%, #490135, #c94040)
-  }
-
-  .chart-legend-item_color.color_public-sale {
-    background-image: radial-gradient(circle at 0 100%, #1b4077, #caede9)
-  }
-
-  .chart-legend-item_color.color_treasury {
-    background-image: radial-gradient(circle at 0 100%, #003247, #62b607)
-  }
-
-  .chart-legend-item_color.color_liquidity {
-    background-image: radial-gradient(circle at 0 100%, #0a0031, #562882)
-  }
-
-  .chart-legend-item_name {
-    font-size: 2em
-  }
-
-  .chart-legend-item_percent {
-    font-family: var(--heading);
-    color: var(--txt--accent);
-    font-size: 2em
-  }
-
-  .chart-legend-item_left {
-    grid-column-gap: 1em;
-    grid-row-gap: 1em;
-    justify-content: flex-start;
-    align-items: center;
-    display: flex
-  }
-
-  .chart-hover-indicator {
-    opacity: 0;
-    pointer-events: none
-  }
-
   .elipse-wrapper {
     width: auto
   }
@@ -4262,10 +4187,6 @@ a {
     font-size: 1.6em
   }
 
-  .chart-legend {
-    width: 80%;
-    font-size: .8em
-  }
 
   .elipse-item {
     font-size: 1.2em
@@ -4366,46 +4287,117 @@ a {
 }
 
 #roadmap{
-  margin: 0px 0px 150px 0px;
+  margin: 0px 0px 100px 0px;
 }
 .roadmap-title {
   text-align: center;
 }
-.roadmap-container {
+
+.carousel-container {
+  width: 90%;
+  max-width: 1000px;
+  overflow: hidden;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+
+.carousel {
   display: flex;
-  overflow-x: hidden;
-  width: 100%;
-  position: relative;
+  transition: transform 1s ease-in-out;
+}
+
+.carousel-item {
+  min-width: 100%;
+  margin: 0 2px;
 }
 
 .roadmap-box {
-  width: 100vw; /* 100% of viewport width */
-  min-width: 300px; /* Minimum width for each box */
   padding: 20px;
-  box-sizing: border-box;
-  background: #f4f4f4;
+  background: #fff;
   border: 1px solid #ddd;
-  margin: 0px 20px;
-  transform: translateX(100%); /* Initially slide off-screen */
-  opacity: 0;
-  transition: transform 1s ease, opacity 1s ease;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.roadmap-box.show {
-  transform: translateX(0); /* Bring the box into view */
-  opacity: 1;
+.roadmap-box h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
-ul {
-  list-style-type: none;
-  padding-left: 0;
+.roadmap-box ul {
+  list-style: none;
+  padding-left: 20px;
 }
 
-ul li {
+.roadmap-box li {
+  margin: 8px 0;
+  font-size: 16px;
+}
+
+/* Make the layout responsive */
+@media screen and (max-width: 768px) {
+  .roadmap-box h2 {
+    font-size: 20px;
+  }
+  
+  .roadmap-box li {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .roadmap-box h2 {
+    font-size: 18px;
+  }
+
+  .roadmap-box li {
+    font-size: 12px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .carousel-item {
+    min-width: 50%;
+  }
+}
+
+
+#golden-button {
+  background-color: #e2a200;
+  border-radius: 25px;
+}
+
+/* General Styling for the Section */
+#token_information {
+  width: 90%;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+}
+
+/* Styling for the Headers */
+.h2-small {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+/* Token Information Box Styling */
+.token-info-box, .price-info-box {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for Token Info and Price Info */
+.token-info-box p, .price-info-box p {
+  font-size: 16px;
+  line-height: 1.5;
   margin: 10px 0;
 }
 
-h2 {
-  font-size: 1.5rem;
-  margin-bottom: 15px;
+.token-info-box p strong, .price-info-box p strong {
+  color: #343a40;
 }
